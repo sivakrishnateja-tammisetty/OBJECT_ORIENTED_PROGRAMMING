@@ -1,0 +1,199 @@
+INTRO TO OOPS:
+-------------
+
+* CLASS - Blueprint for creating objects.
+* OBJECT - instance, created as many times as you want.
+* Attributes - characteristics associated  to a type (obj).
+* Methods - FUnctions associated to a type.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DEFINING A CLASS:
+-----------------
+
+*syntax:
+        class class_name:
+          statements & attributes
+            .........
+        call_the_class
+        statements
+
+*pass : pass is a placeholder (or) null operator.
+
+Eg1:
+class car:
+    pass
+car_1=car()
+print(car_1)
+
+o/p:
+<__main__.car object at 0x7f0cddfbe8c0>
+
+
+
+
+Eg2: Attributes
+class car:
+    color="Red"
+car_1=car()
+print(car_1.color)
+
+o/p: Red
+
+
+Eg3: Methods
+class car:
+    color="Red"
+    type="TEJ"
+car_1=car()
+print(car_1.color.upper())
+print(car_1.type.lower())
+print(car_1.color.isalpha())
+
+o/p:
+RED
+tej
+True
+
+
+Note: dot (.) --> is called dot notation. It is used to access any abilities that object might  have.
+
+
+
+
+*self : self is the default parameter.
+
+
+
+Eg3: METHOD
+
+
+class counting:
+    n=0
+    def cnt(self):
+        self.n=self.n+1
+        print("Counted ",self.n)
+c=counting()
+c.cnt()    #counting.cnt(c)
+c.cnt()    #counting.cnt(c)
+
+o/p:
+Counted 1
+Counted 2
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CONSTRUCTORS AND DESTRUCTORS:
+----------------------------
+
+*constructors are used to setup the variables.
+*constructors and estructors are optional.
+*construtors called at begining and destructors are called at end.
+
+
+Eg1:
+class const_dest:
+    def __init__(self):
+        print("Constructor")
+    def __del__(self):
+        print("Destructor")
+cd=const_dest()
+
+o/p:
+Constructor
+Destructor
+
+
+
+Eg2:
+class const_dest:
+    
+    def __init__(self,color,type):
+        self.color=color
+        self.type=type
+        print("Constructor")
+    def __del__(self):
+        print("Destructor")
+cd=const_dest("RED","SUV")
+print(cd.color)
+print(cd.type)
+
+
+o/p:
+Constructor
+RED
+SUV
+Destructor
+
+Eg3:
+class const_dest:
+    
+    def __init__(self,color,type):
+        self.color=color
+        self.type=type
+        print("Constructor")
+    def __del__(self):
+        print("Destructor")
+cd=const_dest("RED","SUV")
+print(cd.color)
+print(cd.type)
+cd_1=const_dest("BLACK","BNW")
+print(cd_1.color)
+print(cd_1.type)
+
+o/p:
+Constructor
+RED
+SUV
+Constructor
+BLACK
+BNW
+Destructor
+Destructor
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+FUNCTIONS VS OBJECT ORIENTED PROGRAMMING:
+---------------------------------------
+
+
+* USING FUNCTIONS:
+ ----------------
+
+def name(name):
+    print("Hi ",name)
+name("Siva")
+name("Krishna")
+
+o/p:
+Hi siva
+Hi Krishna
+
+
+
+* USING OOPS:
+ -------------
+Eg2:
+class name:
+    name=""
+    def __init__(self,x):
+        self.name=x
+        print("Hi ",x)
+        print("Hi ",self.name)
+name_1=name("Siva")
+name_2=name("Krishna")
+
+o/p:
+Hi Siva
+Hi Siva
+Hi Krishna
+Hi Krishna
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INHERITANCE:
+-----------
+
