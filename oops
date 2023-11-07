@@ -197,3 +197,212 @@ Hi Krishna
 INHERITANCE:
 -----------
 
+
+Eg1:
+class name:
+    name=""
+    def __init__(self,n):
+        self.name=n
+        print("Hi ",self.name)
+class foot(name):
+    def fun(self):
+        print("Hi ",self.name)
+n=name("Siva")
+f=foot("Krishna")
+f.fun()
+
+o/p:
+Hi Siva
+Hi Krishna
+Hi Krishna
+
+
+
+
+SINGLE-LEVEL INHERITANCE:
+------------------------
+
+
+Eg1:
+class A:
+    def state_1(self):
+        print("statement 1 present")
+    def state_2(self):
+        print("statement 2 present")
+    def state_3(self):
+        print("statement 3 present")
+
+class B(A):
+    def state_4(self):
+        print("statement 4 present")
+a=A()
+a.state_1()
+a.state_2()
+a.state_3()
+b=B()
+b.state_4()
+b.state_3()
+
+o/p:
+statement 1 present
+statement 2 present
+statement 3 present
+statement 4 present
+statement 3 present
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+MULTI-LEVEL INHERITANCE:
+-----------------------
+
+
+Eg1:
+class A:
+    def state_1(self):
+        print("statement 1 present")
+    def state_2(self):
+        print("statement 2 present")
+    def state_3(self):
+        print("statement 3 present")
+
+class B(A):
+    def state_4(self):
+        print("statement 4 present")
+class C(B):
+    def state_5(self):
+        print("Statement 5 present")
+
+a=A()
+a.state_1()
+a.state_2()
+a.state_3()
+b=B()
+b.state_4()
+b.state_3()
+c=C()
+c.state_1()
+c.state_2()
+c.state_3()
+c.state_4()
+c.state_5()
+
+o/p:
+statement 1 present
+statement 2 present
+statement 3 present
+statement 4 present
+statement 3 present
+statement 1 present
+statement 2 present
+statement 3 present
+statement 4 present
+Statement 5 present
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MULTIPLE INHERITANCE:
+--------------------
+
+Eg:
+class A:
+    def state_1(self):
+        print("statement 1 present")
+    def state_2(self):
+        print("statement 2 present")
+    def state_3(self):
+        print("statement 3 present")
+
+class B:
+    def state_4(self):
+        print("statement 4 present")
+class C(A,B):
+    def state_5(self):
+        print("Statement 5 present")
+
+
+
+
+c=C()
+c.state_1()
+c.state_2()
+c.state_3()
+c.state_4()
+c.state_5()
+
+o/p:
+statement 1 present
+statement 2 present
+statement 3 present
+statement 4 present
+Statement 5 present
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+OPERATOR OVERLOADING:
+--------------------
+
+Eg1:
+a=1
+b=2
+print(a+b)
+print(int.__add__(a,b))
+
+o/p:
+3
+3
+
+
+
+Eg2:
+class vegtables:
+    def __init__(self,carrots,beans):
+        self.carrots=carrots
+        self.beans=beans
+    
+
+v1=vegtables(2,3)
+v2=vegtables(3,4)
+v3=v1+v2
+print(v3)
+
+o/p:
+Traceback (most recent call last):
+  File "/home/damner/code/script.py", line 10, in <module>
+    v3=v1+v2
+TypeError: unsupported operand type(s) for +: 'vegtables' and 'vegtables'
+
+
+
+
+Eg3:optr overloading
+class vegtables:
+    def __init__(self,carrots,beans):
+        self.carrots=carrots
+        self.beans=beans
+    def __add__(self,other):
+        carrots=self.carrots+other.carrots
+        beans=self.beans+other.beans
+        return  vegtables(carrots,beans)
+
+v1=vegtables(2,3)
+v2=vegtables(3,4)
+v3=v1+v2
+print("Carrots: ",v3.carrots)
+print("Beans: ",v3.beans)
+
+o/p:
+Carrots: 5
+Beans: 7
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DATA HIDING:
+-----------
+
